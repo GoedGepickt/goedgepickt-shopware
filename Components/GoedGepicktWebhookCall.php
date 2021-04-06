@@ -2,6 +2,8 @@
 
 namespace GoedGepicktWebhooks\Components;
 
+use GuzzleHttp\Client;
+
 class GoedGepicktWebhookCall
 {
     protected $config;
@@ -15,19 +17,20 @@ class GoedGepicktWebhookCall
 
     public function sendPostRequest($webhookData)
     {
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $this->getWebhookUrl());
-        curl_setopt($curl, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Accept: application/json'));
-        curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'POST');
-        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($webhookData));
-        curl_exec($curl);
-        curl_close($curl);
+        try {
+            $webhookData['webhook-key'] = $this->config->getWebhookKey();
+            $client = new Client();
+            $client->post($this->getWebhookUrl(), [
+                'body'    => json_encode($webhookData),
+            ]);
+        } catch (\Exception $e) {
+        }
 
         return;
     }
 
     protected function getWebhookUrl()
     {
-        return 'https://account.goedgepickt.nl/webhook/shopware5/' . $this->config->getWebhookKey();
+        return 'https://account.goedgepickt.nl/webhook/shopware5/handle-order-webhook';
     }
 }
