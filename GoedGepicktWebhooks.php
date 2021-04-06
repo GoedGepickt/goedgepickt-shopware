@@ -66,7 +66,7 @@ class GoedGepicktWebhooks extends Plugin
         $webhookData  = $this->getOrderDataForWebhook();
 
         $webhookClient = new GoedGepicktWebhookCall($pluginConfig);
-        $webhookClient->sendRequest($webhookData);
+        $webhookClient->sendPostRequest($webhookData);
     }
 
     private function getOrderDataForWebhook()
