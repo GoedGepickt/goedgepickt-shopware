@@ -1,8 +1,7 @@
 {
   "name": "goedgepickt/goedgepickt-shopware",
   "description": "GoedGepickt webhooks for order events",
-  "version": "1.0.0",
-  "minimum-stability": "dev",
+  "version": "1.0.1",
   "license": "MIT",
   "type": "shopware-plugin",
   "extra": {
