@@ -1,0 +1,32 @@
+{
+  "name": "goedgepickt/goedgepickt-shopware",
+  "description": "GoedGepickt webhooks for order events",
+  "version": "1.0.1",
+  "license": "MIT",
+  "type": "shopware-plugin",
+  "extra": {
+    "installer-name": "GoedGepicktShopwareWebhooks"
+  },
+  "keywords": [
+    "shopware",
+    "goedgepickt"
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/GoedGepickt/goedgepickt-shopware"
+    }
+  ],
+  "authors": [
+    {
+      "name": "GoedGepickt",
+      "email": "info@goedgepickt.nl"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "composer/installers": "~1.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  }
+}

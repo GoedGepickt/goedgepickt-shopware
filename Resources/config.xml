@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" type="text" scope="shop">
+            <name>webhook-key</name>
+            <label lang="de">Webhook Key</label>
+            <label lang="nl">Webhook Key</label>
+            <label lang="en">Webhook Key</label>
+        </element>
+    </elements>
+</config>
