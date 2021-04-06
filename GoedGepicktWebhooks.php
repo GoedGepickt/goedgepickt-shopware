@@ -10,7 +10,7 @@ use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Components\Plugin\Context\UpdateContext;
 
-class GoedGepicktWebhookTrigger extends Plugin
+class GoedGepicktWebhooks extends Plugin
 {
     public static function getSubscribedEvents()
     {
