@@ -65,6 +65,11 @@ class GoedGepicktWebhooks extends Plugin
         $pluginConfig = Shopware()->Container()->get('goedgepickt_webhooks.config');
         $webhookData  = $this->getOrderDataForWebhook();
 
+        //Do not post a webhook if 'orderNumber' is not valid
+        if (!isset($webhookData['orderNumber']) || !$webhookData['orderNumber']) {
+            return;
+        }
+
         $webhookClient = new GoedGepicktWebhookCall($pluginConfig);
         $webhookClient->sendPostRequest($webhookData);
     }
